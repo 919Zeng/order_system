@@ -11,6 +11,8 @@ import {
     View,
     ListView,
     TouchableHighlight,
+    Image,
+    Alert
 } from 'react-native';
 
 const height = 70;
@@ -29,8 +31,8 @@ export default class GoodsList extends Component<{}> {
 
         //定义数据源
         this.temData = [
-            {name: '红烧聂庭赫', price: 1, id: 1, num: 0},
-            {name: '红烧王春小', price: 2, id: 2, num: 0},
+            {name: '红烧聂庭赫', price: 1, id: 1, pic: 'http://school.coolmoresever.com/images/timg.jpg', num: 0},
+            {name: '红烧王春小', price: 2, id: 2, pic: 'http://school.coolmoresever.com/images/timg.jpg', num: 0},
         ];
 
         this.state = {
@@ -76,7 +78,12 @@ export default class GoodsList extends Component<{}> {
         return (
             <View style={{flex: 1}}>
                 <View style={styles.row}>
-                    <View style={styles.pic}><Text>{rowData.name}</Text></View>
+                    <View style={styles.pic}>
+                        <Image
+                            source={{uri: rowData.pic}}
+                            style={styles.thumbnail}
+                        />
+                    </View>
 
                     <View style={styles.info}>
                         <View style={{
@@ -142,7 +149,7 @@ const styles = StyleSheet.create({
     },
     pic: {
         flex: 2,
-        backgroundColor: '#5db6ff',
+        // backgroundColor: '#5db6ff',
         justifyContent: 'center',
         alignItems: 'center',
         height: height,
@@ -154,5 +161,9 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
         // alignItems: 'center',
         height: height,
+    },
+    thumbnail: {
+        width: 70,
+        height: 70,
     },
 });
