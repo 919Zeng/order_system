@@ -52,6 +52,7 @@ export default class GoodsList extends Component<{}> {
         return total;
     }
 
+    //
     //改变单行数量的函数，type为+或-，rowID为当前行在temData的索引
     changeNum(type, rowID, sectionID) {
         if (type === '+') {
