@@ -96,7 +96,7 @@ export default class GoodsList extends Component<{}> {
                             marginLeft: 10,
                             marginTop: height - 20
                         }}>
-                            <Text>单价：{rowData.price}元</Text>
+                            <Text>单价123：{rowData.price}元</Text>
                         </View>
                         <View style={{
                             position: 'absolute',
