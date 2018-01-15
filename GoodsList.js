@@ -11,6 +11,7 @@ import {
     View,
     ListView,
     TouchableHighlight,
+    Alert,
 } from 'react-native';
 
 const height = 70;
@@ -75,36 +76,45 @@ export default class GoodsList extends Component<{}> {
             <View style={{flex: 1}}>
                 <View style={styles.row}>
                     <View style={styles.info}>
-                        <View style={{
-                            position: 'absolute',
-                            marginLeft: 12,
-                            marginTop: 10,
-                            height:20,
-                            backgroundColor: '#fff',
-                            width:80,
-                            // justifyContent: 'center',
-                            // alignItems: 'center',
-                        }}><Text style={{fontWeight:'bold',fontSize:14,color:'#000'}}>{rowData.name}</Text></View>
-                        <View style={{
-                            position: 'absolute',
-                            flexDirection: 'row',
-                            backgroundColor: '#fff',
-                            marginLeft:0,
-                            marginTop: height - 35,
-                            height:23,
-                            width:80,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }}>
-                            <Text style={{fontWeight:'bold',fontSize:16,color:'#000'}}>￡{rowData.price}</Text>
-                            <Text> each</Text>
+                        <View style={{flexDirection:'row'}}>
+                            <View style={{
+                                position: 'absolute',
+                                marginLeft: 12,
+                                marginTop: 10,
+                                height:20,
+                                backgroundColor: '#fff',
+                                width:100,
+                                // justifyContent: 'center',
+                                // alignItems: 'center',
+                            }}>
+                                <Text style={{fontSize:18,color:'#000'}}>
+                                    {rowData.name}
+                                </Text>
+                            </View>
+                            <View style={{
+                                position: 'absolute',
+                                flexDirection: 'column',
+                                backgroundColor: '#fff',
+                                marginLeft:240,
+                                marginTop:30,
+                                height:35,
+                                width:88,
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}>
+                                <Text style={{fontSize:14}}>
+                                    from
+                                </Text>
+                                <Text style={{fontSize:14,color:'#000'}}>
+                                    ￡{rowData.price}
+                                </Text>
                         </View>
                         <View style={{
                             position: 'absolute',
                             flexDirection: 'row',
-                            marginLeft: 250,
+                            marginLeft: 320,
                             marginTop: height - 40,
-                            width:40,
+                            width:50,
                             alignItems: 'center',
                             justifyContent:'center'
                         }}>
@@ -113,19 +123,26 @@ export default class GoodsList extends Component<{}> {
                                 onPress={() => {
                                 this.changeNum('-', rowID, sectionID)
                             }}>
-                                <Text style={{fontSize:30,color:'#ff7d01'}}>⊙</Text>
+                                <Text style={{fontSize:30,color:'#ff7d01'}}>
+                                    ⊙
+                                </Text>
                             </TouchableHighlight>
 
-                            <Text style={{fontSize:20,color:'#000'}}> {rowData.num} </Text>
+                            <Text style={{fontSize:20,color:'#000'}}>
+                                {rowData.num}
+                                </Text>
 
                             <TouchableHighlight
                                 underlayColor='white'
                                 onPress={() => {
                                 this.changeNum('+', rowID, sectionID)
                             }}>
-                                <Text style={{fontSize:30,color:'#ff7d01'}}>⊕</Text>
+                                <Text style={{fontSize:30,color:'#ff7d01'}}>
+                                    ⊕
+                                </Text>
                             </TouchableHighlight>
                         </View>
+                    </View>
                     </View>
                 </View>
                 <View style={{height: 1, backgroundColor: '#cccccc'}}/>
